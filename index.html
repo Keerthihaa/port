@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Keerthihaa Sri Palanivel - Portfolio</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>KS</text></svg>" type="image/svg+xml">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #fff;
+    }
+    .navbar {
+      background: linear-gradient(90deg, #4e54c8, #8f94fb);
+      box-shadow: 0px 2px 15px rgba(0,0,0,0.15);
+    }
+    .navbar a {
+      color: white !important;
+      font-weight: 500;
+    }
+    .navbar a:hover {
+      text-shadow: 0px 0px 5px white;
+    }
+    .hero {
+      position: relative;
+      background: linear-gradient(135deg, #e0eafc, #cfdef3);
+      color: #333;
+      padding: 100px 20px 0;
+      text-align: center;
+      overflow: hidden;
+    }
+    .hero img {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      object-fit: cover;
+      box-shadow: 0px 0px 20px rgba(255, 75, 119, 0.6);
+      animation: glitter 2s infinite linear;
+      border: 5px solid transparent;
+      background: linear-gradient(45deg, gold, deeppink, cyan, gold);
+      background-size: 400% 400%;
+      padding: 5px; 
+    }
+    @keyframes glitter {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+    .hero h1 {
+      font-weight: bold;
+      margin-top: 20px;
+    }
+    .hero p {
+      font-size: 1.1rem;
+      margin-bottom: 20px;
+    }
+    .btn-pink {
+      background-color: #4e54c8;
+      color: white;
+      border-radius: 50px;
+      padding: 10px 25px;
+      transition: 0.3s;
+      border: none;
+      box-shadow: 0px 4px 10px rgba(78, 84, 200, 0.3);
+    }
+    .btn-pink:hover {
+      background-color: #3a40b5;
+      transform: scale(1.05);
+    }
+    .btn-outline-pink {
+      border: 1px solid #4e54c8;
+      color: #4e54c8;
+      border-radius: 50px;
+      padding: 10px 25px;
+      transition: 0.3s;
+    }
+    .btn-outline-pink:hover {
+      background-color: #4e54c8;
+      color: white;
+      transform: scale(1.05);
+    }
+    .custom-card {
+      background: white;
+      border-radius: 15px;
+      padding: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      border: 1px solid transparent;
+      background-image: linear-gradient(white, white), linear-gradient(45deg, #4e54c8, #8f94fb, #d0d4ff, #8f94fb, #4e54c8);
+      background-origin: border-box;
+      background-clip: content-box, border-box;
+      background-size: 200% 200%;
+      animation: borderGlow 4s infinite linear;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      text-align:center;
+    }
+    .custom-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+    }
+    .skill-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 8px 5px;
+      transition: transform 0.3s ease;
+      margin-bottom: 5px;
+    }
+    .skill-item:hover {
+      transform: scale(1.1);
+    }
+    .skill-icon {
+      font-size: 1.8rem;
+      margin-bottom: 5px;
+    }
+    .skill-name {
+      font-weight: 600;
+      text-align: center;
+      font-size: 1rem;
+    }
+    .skills-card {
+      height: 400px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+    }
+    .project-card {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .project-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    }
+    .project-icon {
+      font-size: 2rem;
+      margin-bottom: 15px;
+      color: #ff4b77;
+    }
+    .project-title {
+      font-weight: 600;
+      margin-bottom: 10px;
+      color: #333;
+    }
+    .project-description {
+      flex-grow: 1;
+      margin-bottom: 15px;
+    }
+    .project-tools {
+      margin-top: auto;
+      font-size: 0.9rem;
+    }
+    .project-badge {
+      display: inline-block;
+      padding: 3px 8px;
+      border-radius: 12px;
+      font-size: 0.8rem;
+      margin-right: 5px;
+      margin-bottom: 5px;
+    }
+    .achievement-item {
+      padding: 12px 15px;
+      margin-bottom: 10px;
+      background-color: #f8f9fa;
+      border-radius: 8px;
+      border-left: 4px solid #ff4b77;
+      transition: transform 0.2s ease;
+    }
+    .achievement-item:hover {
+      transform: translateX(5px);
+      background-color: #fff0f5;
+    }
+    .achievement-category {
+      font-weight: 600;
+      color: #ff4b77;
+      margin-bottom: 8px;
+      display: block;
+    }
+    .education-card {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 20px;
+    }
+    .education-item {
+      text-align: center;
+    }
+    .experience-card {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      padding: 20px;
+    }
+    .section-title {
+      transition: all 0.3s ease;
+      position: relative;
+      padding-bottom: 15px;
+      margin-bottom: 30px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-size: 1.8rem;
+      color: #4e54c8;
+    }
+    section {
+      padding-top: 100px;
+      padding-bottom: 100px;
+      scroll-margin-top: 80px;
+    }
+    .section-spacing {
+      margin-top: 100px;
+      margin-bottom: 100px;
+      opacity: 0;
+      transform: translateY(50px) scale(0.95);
+      transition: opacity 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94), transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      position: relative;
+      z-index: 1;
+    }
+    .section-spacing.visible {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+    .section-title:after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100px;
+      height: 4px;
+      background: linear-gradient(90deg, #ff4b77, #ff99cc);
+      border-radius: 2px;
+    }
+    .section-title:hover {
+      color: #e63a67;
+      transform: translateY(-3px);
+    }
+    .section-title:hover:after {
+      width: 120px;
+      background: linear-gradient(90deg, #8f94fb, #4e54c8);
+    }
+    @keyframes borderGlow {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+    footer {
+      background: linear-gradient(90deg, #1f91a3, #05b4f4);
+      text-align: center;
+      padding: 15px;
+      font-size: 0.9rem;
+      color: white;
+    }
+    
+  </style>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg fixed-top">
+  <div class="container">
+    <a class="navbar-brand fw-bold" href="#">Keerthihaa Sri</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="#education">Education</a></li>
+        <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+        <li class="nav-item"><a class="nav-link" href="#experience">Experience</a></li>
+        <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+        <li class="nav-item"><a class="nav-link" href="#achievements">Achievements</a></li>
+        <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+        <li class="nav-item"><a class="nav-link" href="C:/Users/User/Desktop/portanime/RESUME ALL SKILLS.pdf" target="_blank">Resume</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<section class="hero">
+  <img src="C:/Users/User/Desktop/portanime/sri photo cams .jpg" alt="Keerthihaa Sri">
+  <h1>Keerthihaa Sri Palanivel</h1>
+  <p>Computer Science Student</p>
+  <a href="#contact" class="btn btn-pink me-2">Hire Me</a>
+  <a href="C:/Users/User/Desktop/portanime/intern resume PDF (1).pdf" target="_blank" class="btn btn-outline-pink">Get Resume</a>
+
+  <svg class="wave" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 180">
+    <path fill="#ffffff" fill-opacity="1" d="M0,64L48,74.7C96,85,192,107,288,101.3C384,96,480,64,576,64C672,64,768,96,864,117.3C960,139,1056,149,1152,138.7C1248,128,1344,96,1392,80L1440,64V180H0Z"></path>
+  </svg>
+</section>
+
+<section id="about" class="container py-5 section-spacing">
+  <h2 class="section-title text-center">About Me</h2>
+  <div class="custom-card">
+    <p>
+      I am a passionate and dedicated B.E. Computer Science student with strong technical and problem-solving skills.
+      My expertise includes Python, Java, HTML, CSS, Bootstrap, and SQL. I am highly adaptable, possess excellent
+      communication skills, and thrive in collaborative environments.
+    </p>
+  </div>
+</section>
+
+<section id="education" class="container py-5 section-spacing">
+  <h2 class="section-title text-center">Education</h2>
+  <div class="row g-4">
+    <div class="col-md-6">
+      <div class="custom-card education-card">
+        <div class="education-item">
+          <h5 class="fw-bold text-center mb-3">Bachelor of Engineering</h5>
+          <div class="text-center mb-3">
+            <i class="fas fa-graduation-cap fa-2x text-primary"></i>
+          </div>
+          <p class="text-center mb-2"><strong>Computer Science And Engineering</strong></p>
+          <p class="text-center text-muted mb-2">M Kumarasamy College of Engineering</p>
+          <p class="text-center mb-2">2023 - 2027</p>
+          <div class="d-flex justify-content-center">
+            <span class="badge bg-success">CGPA: 8.5/10</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="custom-card education-card">
+        <div class="education-item">
+          <h5 class="fw-bold text-center mb-3">Higher Secondary</h5>
+          <div class="text-center mb-3">
+            <i class="fas fa-school fa-2x text-primary"></i>
+          </div>
+          <p class="text-center text-muted mb-2">Kurinji higher Secondary School</p>
+          <p class="text-center mb-2">2022 - 2023</p>
+          <div class="d-flex justify-content-center">
+            <span class="badge bg-success">Percentage: 91%</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="container" >
+  
+<section id="skills" class="container py-5 section-spacing">
+  <h2 class="section-title text-center">Skills</h2>
+  <div class="row g-4">
+    <div class="col-md-6">
+      <div class="custom-card skills-card">
+        <h5 class="fw-bold">Technical Skills</h5>
+        <div class="row text-center">
+          <div class="col-6 mb-1">
+            <div class="skill-item">
+              <i class="fab fa-python fa-2x text-primary skill-icon"></i>
+              <span class="skill-name">Python</span>
+            </div>
+          </div>
+          <div class="col-6 mb-1">
+            <div class="skill-item">
+              <i class="fab fa-java fa-2x text-danger skill-icon"></i>
+              <span class="skill-name">Java</span>
+            </div>
+          </div>
+          <div class="col-6 mb-1">
+            <div class="skill-item">
+              <i class="fab fa-html5 fa-2x text-warning skill-icon"></i>
+              <span class="skill-name">HTML</span>
+            </div>
+          </div>
+          <div class="col-6 mb-1">
+            <div class="skill-item">
+              <i class="fab fa-css3-alt fa-2x text-info skill-icon"></i>
+              <span class="skill-name">CSS</span>
+            </div>
+          </div>
+          <div class="col-6 mb-1">
+            <div class="skill-item">
+              <i class="fab fa-bootstrap fa-2x text-primary skill-icon"></i>
+              <span class="skill-name">Bootstrap</span>
+            </div>
+          </div>
+          <div class="col-6 mb-1">
+            <div class="skill-item">
+              <i class="fas fa-database fa-2x text-success skill-icon"></i>
+              <span class="skill-name">SQL</span>
+            </div>
+          </div>
+          <div class="col-6 mb-1">
+            <div class="skill-item">
+              <i class="fab fa-js fa-2x text-warning skill-icon"></i>
+              <span class="skill-name">JavaScript</span>
+            </div>
+          </div>
+          <div class="col-6 mb-1">
+            <div class="skill-item">
+              <i class="fab fa-php fa-2x text-info skill-icon"></i>
+              <span class="skill-name">PHP</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="custom-card skills-card">
+        <h5 class="fw-bold">Soft Skills</h5>
+        <div class="row text-center">
+          <div class="col-6 mb-1">
+            <div class="skill-item">
+              <i class="fas fa-comments fa-2x text-info skill-icon"></i>
+              <span class="skill-name">Communication</span>
+            </div>
+          </div>
+          <div class="col-6 mb-1">
+            <div class="skill-item">
+              <i class="fas fa-sync-alt fa-2x text-success skill-icon"></i>
+              <span class="skill-name">Adaptability</span>
+            </div>
+          </div>
+          <div class="col-6 mb-1">
+            <div class="skill-item">
+              <i class="fas fa-clock fa-2x text-warning skill-icon"></i>
+              <span class="skill-name">Time Management</span>
+            </div>
+          </div>
+          <div class="col-6 mb-1">
+            <div class="skill-item">
+              <i class="fas fa-user-friends fa-2x text-success skill-icon"></i>
+              <span class="skill-name">Teamwork</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="experience" class="container py-5 section-spacing">
+  <h2 class="section-title text-center">Experience</h2>
+  <div class="row g-4">
+    <div class="col-md-6">
+      <div class="custom-card experience-card">
+        <div class="experience-item text-center">
+          <i class="fas fa-briefcase fa-2x text-primary mb-3"></i>
+          <h5 class="fw-bold mb-2">Web Development Intern</h5>
+          <p class="text-muted mb-2">Sparkout Tech Solutions </p>
+          <p class="text-muted small mb-3">15 Days</p>
+          <p>Developed and maintained responsive web pages using HTML, CSS, JavaScript,         
+                                Bootstrap.   
+</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="custom-card experience-card">
+        <div class="experience-item text-center">
+          <i class="fas fa-laptop-code fa-2x text-primary mb-3"></i>
+          <h5 class="fw-bold mb-2">Member at TIH</h5>
+          <p>Full Stack Developer</p>
+          <p>Aug-2025-present</p>
+          <p>Currently training in Full Stack Development at the Technology Innovation Hub with exposure to real-time project development.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="projects" class="container py-5 section-spacing">
+  <h2 class="section-title text-center">Projects</h2>
+  <div class="row g-4">
+    <div class="col-md-6">
+      <div class="custom-card project-card">
+        <div class="text-center">
+          <i class="fas fa-hands-helping project-icon"></i>
+          <h5 class="project-title fw-bold">Food Donation Management System</h5>
+        </div>
+        <p class="project-description">Developed a web-based system to connect food donors with NGOs to reduce food wastage.
+          Enabled donor registration, food posting, and NGO requests with secure data handling.</p>
+        <div class="project-tools">
+          <strong>Tools Used:</strong> HTML, CSS, JavaScript, PHP, SQL
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="custom-card project-card">
+        <div class="text-center">
+          <i class="fas fa-home project-icon"></i>
+          <h5 class="project-title fw-bold">Hostel Management System</h5>
+        </div>
+        <p class="project-description">Developed an end-to-end hostel management system handling student attendance, leave management, mess menu, room allocation, and outpass tracking.</p>
+        <div class="project-tools">
+          <strong>Tools Used:</strong> HTML, CSS, PHP, MySQL, JavaScript, AJAX, Bootstrap, DataTables
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="achievements" class="container py-5 section-spacing">
+  <h2 class="section-title text-center">Achievements</h2>
+  <div class="row g-4">
+    <div class="col-md-4">
+      <div class="custom-card">
+        <div class="achievement-item">
+          <span class="achievement-category">Certifications</span>
+          <div>Introduction to HTML and CSS-coursera</div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="custom-card">
+        <div class="achievement-item">
+          <span class="achievement-category">Certifications</span>
+          <div>Industrial IOT 4.0-NPTEL</div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="custom-card">
+        <div class="achievement-item">
+          <span class="achievement-category">Recognition</span>
+          <div>Selected as a Google Student Ambassador</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="container py-5 section-spacing text-center">
+  <h2 class="section-title">Contact Me</h2>
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+      <div class="custom-card">
+        <p class="mb-4">Feel free to reach out to me through any of these platforms:</p>
+        <div class="social-icons d-flex justify-content-center flex-wrap gap-4 mb-4">
+          <a href="tel:+918675031038" class="text-decoration-none">
+            <div class="d-flex align-items-center">
+              <i class="fas fa-phone fa-2x text-success me-2"></i>
+              <span>+91 8675031038</span>
+            </div>
+          </a>
+          <a href="https://www.linkedin.com/in/keerthihaa-sri-41a319290/" target="_blank" class="text-decoration-none">
+            <div class="d-flex align-items-center">
+              <i class="fab fa-linkedin fa-2x text-primary me-2"></i>
+              <span>LinkedIn</span>
+            </div>
+          </a>
+          <a href="https://github.com/Keerthihaa" target="_blank" class="text-decoration-none">
+            <div class="d-flex align-items-center">
+              <i class="fab fa-github fa-2x text-dark me-2"></i>
+              <span>GitHub</span>
+            </div>
+          </a>
+          <a href="mailto:keerthihaasri09@gmail.com" class="text-decoration-none">
+            <div class="d-flex align-items-center">
+              <i class="fas fa-envelope fa-2x text-info me-2"></i>
+              <span>keerthihaasri09@gmail.com</span>
+            </div>
+          </a>
+        </div>
+        <div class="mt-4">
+          <a href="C:/Users/User/Desktop/portanime/RESUME ALL SKILLS.pdf" target="_blank" class="btn btn-pink me-3 mb-2">Download CV</a>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+</div>
+
+<footer>
+  © 2026 Keerthihaa Sri Palanivel. All Rights Reserved.
+</footer>
+
+</body>
+  <!-- Scroll Animation Script -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const sections = document.querySelectorAll('.section-spacing');
+      
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          }
+        });
+      }, {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+      });
+      
+      sections.forEach(section => {
+        observer.observe(section);
+      });
+      
+      // Add smooth scrolling behavior for anchor links
+      const navLinks = document.querySelectorAll('a[href^="#"]');
+      navLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+          e.preventDefault();
+          
+          const targetId = this.getAttribute('href');
+          const targetSection = document.querySelector(targetId);
+          
+          if (targetSection) {
+            // Remove visible class to reset animation
+            targetSection.classList.remove('visible');
+            
+            // Scroll to the section
+            window.scrollTo({
+              top: targetSection.offsetTop - 80, // Account for fixed navbar
+              behavior: 'smooth'
+            });
+            
+            // Trigger the animation after a brief delay
+            setTimeout(() => {
+              targetSection.classList.add('visible');
+            }, 300);
+          }
+        });
+      });
+    });
+  </script>
+</html>
